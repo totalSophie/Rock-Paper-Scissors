@@ -49,8 +49,10 @@ function game(num){
     for (let i = 0; i < num; i++){
         let playerSelection = compare_input();
         const computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-        result = playRound(playerSelection, computerSelection);
+        result = playRound(playerSelection, computerSelection);   
+        console.log('your choice: ' + playerSelection);
+        console.log('computer\'s choice: ' + computerSelection);
+        console.log(result);
 
         if (result == 'You lose'){
             computerCounter = computerCounter + 1;
