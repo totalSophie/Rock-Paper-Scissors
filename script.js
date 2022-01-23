@@ -46,21 +46,21 @@ function game(num){
     let playerCounter = 0;
     let computerCounter = 0;
 
-    for (let i = 0; i < num; i++){
-        let playerSelection = compare_input();
-        const computerSelection = computerPlay();
-        result = playRound(playerSelection, computerSelection);   
-        console.log('your choice: ' + playerSelection);
-        console.log('computer\'s choice: ' + computerSelection);
-        console.log(result);
+    
+    let playerSelection = compare_input();
+    const computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);   
+    console.log('your choice: ' + playerSelection);
+    console.log('computer\'s choice: ' + computerSelection);
+    console.log(result);
 
-        if (result == 'You lose'){
-            computerCounter = computerCounter + 1;
-        }
-        else if (result == 'You win'){
-            playerCounter = playerCounter + 1;     
-        }
+    if (result == 'You lose'){
+        computerCounter = computerCounter + 1;
     }
+    else if (result == 'You win'){
+        playerCounter = playerCounter + 1;     
+    }
+    
 
     if (computerCounter > playerCounter){
         console.log('Sorry, You lose');
