@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Playfair+Display:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
 
 body {
     height: 100vh;
@@ -25,7 +26,9 @@ body {
     display: flex;
     justify-content: center;
     gap: 55px;
+    transition: all 5s;
 }
+
 
 .display{
     border: 5px solid pink;
@@ -38,32 +41,45 @@ body {
 .rock,
 .paper,
 .scissors{
-    display: inline-block;
-    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    border: 5px solid black;
     padding: 10px;
-    width: 80px;
+    width: 100px;
     
     }
 
-img{
+.img{
     width: 80px;
     height: 80px;
+    transition: all 0.5s;
 }
+
+.img:hover {
+    transform: scale(1.5);
+  }
 
 .choices{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
 }
 
 .results,
 .restart{  
     display: flex;
-    justify-content: center;  
+    justify-content: center; 
+    align-items: center; 
     border: 5px solid green;
+    color: rgb(0, 238, 255);
     padding: 10px;
     width: 250px;
     height: 30px;
-    margin: 40px auto
+    margin: 40px auto;
+    font-family: 'Yatra One', cursive;
+}
 
+h3{
+    color: green;
 }
