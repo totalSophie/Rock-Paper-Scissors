@@ -1,89 +1,3 @@
-/* // Creating a function computerPlay that randomly selects rock paper or scissors
-function computerPlay(){
-    let computer_choices = ['rock', 'paper', 'scissors'];
-    let random_number = Math.floor(Math.random() * 3);
-    let randomChoice = computer_choices[random_number];    
-    return (randomChoice);
-}
-
-
-// function that takes parameters playerSelection, computerSelection and chooses who is the winner
-function playRound(playerSelection, computerSelection){
-    playerSelection = playerSelection.toLowerCase();
-
-    //If you both choose the same thing, it is a tie
-    if (computerSelection === 'rock' && playerSelection === 'rock'){
-        return("It's a tie")
-    }
-    
-    if (computerSelection === 'paper' && playerSelection === 'paper'){
-        return("It's a tie")
-    }
-
-    if (computerSelection === 'scissors' && playerSelection === 'scissors'){
-        return("It's a tie")
-    }
-
-    // Selection where you beat the computer
-    if (computerSelection === 'rock' && playerSelection === 'paper'){
-        return("You win")
-    }
-    if (computerSelection === 'paper' && playerSelection === 'scissors'){
-        return("You win")
-    }
-    if (computerSelection === 'scissors' && playerSelection === 'rock'){
-        return("You win")
-    }
-
-    //Selection where the computer beat you
-    else{
-        return ('You lose')
-    }
-
-}
-
-// Creating a function that keeps score and reports a winner or loser at the end. 
-function game(num){
-    let playerCounter = 0;
-    let computerCounter = 0;
-
-    
-    let playerSelection = compare_input();
-    const computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);   
-    console.log('your choice: ' + playerSelection);
-    console.log('computer\'s choice: ' + computerSelection);
-    console.log(result);
-
-    if (result == 'You lose'){
-        computerCounter = computerCounter + 1;
-    }
-    else if (result == 'You win'){
-        playerCounter = playerCounter + 1;     
-    }
-    
-
-    if (computerCounter > playerCounter){
-        console.log('Sorry, You lose');
-    }
-    else if (playerCounter > computerCounter){
-        console.log('Yaaayy, You win');
-    }
-    else{
-        console.log('Well, you tied!')
-    }
-}
-
-    // Function that checks to see if the input is either rock, papaer or scissors
-// Function that checks to see if the input is either rock, papaer or scissors
-function compare_input (){
-    return player_input;
-}
-
-//play how many times?
-game(3);
- */
-
 let player_input ='';
 let finalResult = '';
 let playerCounter = 0;
@@ -91,6 +5,7 @@ let computerCounter = 0;
 
 let choiceDisplay = document.querySelector('.my-choice')
 let choices = document.querySelector('.choices')
+let img = document.querySelector('.img')
 let mine = document.querySelector('#mine')
 let comps = document.querySelector('.comps')
 let result_div = document.querySelector('.results')
@@ -169,12 +84,14 @@ function changeDisplay(e){
     //After the fifth click, disable any more clicks
     else{
         e.preventDefault
+        //remove the hover efect
+        rockImage.classList.add('noHover')
+        paperImage.classList.add('noHover')
+        scissorsImage.classList.add('noHover')
         let final_text = document.createElement('h3')
         final_text.textContent = finalResult;
         result_div.replaceChildren(final_text)
-
-    }
-    
+    }   
 }
 
 function computerPlay(){
@@ -196,8 +113,6 @@ function computerPlay(){
     }
     return (randomChoice);
 }
-
-
 
 // function that takes parameters playerSelection, computerSelection and chooses who is the winner
 function playRound(playerSelection, computerSelection){
@@ -236,9 +151,7 @@ function playRound(playerSelection, computerSelection){
 }
 
 // Creating a function that keeps score and reports a winner or loser at the end. 
-function game(){
-    
-    
+function game(){   
 
     let playerSelection = compare_input();
     const computerSelection = computerPlay();
@@ -261,7 +174,6 @@ function game(){
     console.log('comp ' + computerCounter)
     console.log('brrr')
     
-
     // Checking the counter
     if (computerCounter > playerCounter){
         finalResult = 'Sorry, You lose'
@@ -279,16 +191,8 @@ function game(){
     return finalResult;
 }
 
-function afterGame(){
-    
-}
     // Function that checks to see if the input is either rock, papaer or scissors
 // Function that checks to see if the input is either rock, papaer or scissors
 function compare_input (){
     return player_input;
 }
-
-//play how many times?
-//game(3);
-
-

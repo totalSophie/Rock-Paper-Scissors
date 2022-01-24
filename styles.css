@@ -58,6 +58,10 @@ body {
 .img:hover {
     transform: scale(1.5);
   }
+  
+.noHover{
+    pointer-events: none;
+}
 
 .choices{
     display: flex;
