@@ -12,9 +12,6 @@ body {
     background-size: cover;
     background-color: #cccccc;   
   }
-.bg-container{
-    
-}
 
 .rps{
     font-family: 'BioRhyme', serif;
@@ -31,13 +28,36 @@ body {
     padding: 30px;
 }
 
+#mine-title,
+#comps-title{
+    width: 100px;
+    height: 30px;
+}
+
 .choice-title{
     display: flex;
     justify-content: center;
     gap: 145px;
     font-size: 20px;
-    font-style: italic;
-    
+    font-style: italic; 
+}
+
+.scores{
+    display: flex;
+    justify-content: center;
+    gap: 145px;
+        
+}
+
+#mine-score,
+#comps-score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(17, 5, 7);
 }
 
 .choices-display{

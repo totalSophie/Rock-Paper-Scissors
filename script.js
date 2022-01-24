@@ -9,6 +9,8 @@ let img = document.querySelector('.img')
 let mine = document.querySelector('#mine')
 let comps = document.querySelector('.comps')
 let result_div = document.querySelector('.results')
+let my_score = document.querySelector('#mine-score')
+let comps_score = document.querySelector('#comps-score')
 let restartButton = document.querySelector('.restart')
 
 //Creating images that'll identify user's choice
@@ -154,7 +156,8 @@ function playRound(playerSelection, computerSelection){
 
 // Creating a function that keeps score and reports a winner or loser at the end. 
 function game(){   
-
+    let my_count = document.createElement('p')
+    let comp_count = document.createElement('p')
     let playerSelection = compare_input();
     const computerSelection = computerPlay();
     result = playRound(playerSelection, computerSelection);
@@ -175,6 +178,12 @@ function game(){
     console.log('player ' + playerCounter)
     console.log('comp ' + computerCounter)
     console.log('brrr')
+
+    my_count.textContent = playerCounter;
+    comp_count.textContent = computerCounter;
+
+    my_score.replaceChildren(my_count);
+    comps_score.replaceChildren(comp_count);
     
     // Checking the counter
     if (computerCounter > playerCounter){
