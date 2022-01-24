@@ -9,6 +9,7 @@ let img = document.querySelector('.img')
 let mine = document.querySelector('#mine')
 let comps = document.querySelector('.comps')
 let result_div = document.querySelector('.results')
+let restartButton = document.querySelector('.restart')
 
 //Creating images that'll identify user's choice
 let rockImage = document.getElementById('rock-img')
@@ -52,6 +53,7 @@ scissors_comps.style.height = ('80px')
 rockImage.addEventListener("click", changeDisplay)
 paperImage.addEventListener("click", changeDisplay)
 scissorsImage.addEventListener("click", changeDisplay)
+restartButton.addEventListener("click", restart)
 
 let mouse_click = 0;
 function changeDisplay(e){
@@ -88,7 +90,7 @@ function changeDisplay(e){
         rockImage.classList.add('noHover')
         paperImage.classList.add('noHover')
         scissorsImage.classList.add('noHover')
-        let final_text = document.createElement('h3')
+        let final_text = document.createElement('h2')
         final_text.textContent = finalResult;
         result_div.replaceChildren(final_text)
     }   
@@ -195,4 +197,8 @@ function game(){
 // Function that checks to see if the input is either rock, papaer or scissors
 function compare_input (){
     return player_input;
+}
+
+function restart (){
+    location.reload();
 }
